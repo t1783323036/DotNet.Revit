@@ -283,7 +283,17 @@ namespace DotNet.Exchange.Revit.Export
         /// </summary>
         private Stack<GeometryObject> GetGeometryObject(Element elem)
         {
-            var geometryElement = elem.get_Geometry(new Options() { DetailLevel = ViewDetailLevel.Fine, ComputeReferences = true });
+            var geometryElement = default(GeometryElement);
+
+            if (elem is FamilyInstance)
+            {
+                geometryElement = (elem as FamilyInstance).GetOriginalGeometry(new Options() { DetailLevel = ViewDetailLevel.Fine});
+            }
+            else
+            {
+                geometryElement = elem.get_Geometry(new Options() { DetailLevel = ViewDetailLevel.Fine, ComputeReferences = true });
+            }
+
             var objects = new List<GeometryObject>();
             this.RecursionObject(geometryElement, ref objects);
 

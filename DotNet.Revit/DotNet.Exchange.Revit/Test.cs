@@ -52,7 +52,6 @@ namespace DotNet.Exchange.Revit
                         CreateModelLine(doc, p1, p2);
                         CreateModelLine(doc, p2, p3);
                         CreateModelLine(doc, p3, p1);
-
                     }
                 }
             });
