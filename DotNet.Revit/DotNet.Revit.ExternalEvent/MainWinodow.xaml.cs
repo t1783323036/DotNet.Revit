@@ -39,15 +39,14 @@ namespace DotNet.Revit.ExternalEvent
                 var doc = uiDoc.Document;
 
                 var ids = uiDoc.Selection.GetElementIds();
-
                 if (ids.Count > 0)
                 {
                     doc.Invoke(x =>
                     {
                         doc.Delete(ids);
-
                     });
                 }
+
             });
 
             helper.Invoke(m =>
