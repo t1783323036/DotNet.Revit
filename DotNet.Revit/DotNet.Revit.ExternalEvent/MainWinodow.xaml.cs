@@ -62,7 +62,7 @@ namespace DotNet.Revit.ExternalEvent
                         doc.Delete(refer.ElementId);
                     });
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
                 }
