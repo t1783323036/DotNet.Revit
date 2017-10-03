@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achieve\GlobalMouseHook.cs" />
     <Compile Include="Achieve\HookBase.cs" />
+    <Compile Include="Achieve\MouseHook.cs" />
     <Compile Include="Achieve\MouseHookBase.cs" />
     <Compile Include="CommandTest.cs" />
     <Compile Include="DataStructure\MOUSEHOOKSTRUCT.cs" />
