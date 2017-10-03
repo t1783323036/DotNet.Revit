@@ -1,4 +1,5 @@
-﻿using DotNet.Revit.Hook.Helper;
+﻿using DotNet.Revit.Hook.DataStructure;
+using DotNet.Revit.Hook.Helper;
 using DotNet.Revit.Hook.Interface;
 using System;
 using System.Collections.Generic;
