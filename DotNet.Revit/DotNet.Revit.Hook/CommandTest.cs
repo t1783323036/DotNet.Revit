@@ -37,7 +37,6 @@ namespace DotNet.Revit.Hook
             System.Windows.Forms.MessageBox.Show(string.Format("双击击元素Id： {0}", e.Element.Id));
 
             return 1;
-
         }
     }
 }
