@@ -42,6 +42,22 @@ namespace DotNet.Revit.Hook
         }
 
         /// <summary>
+        /// 是否监控.
+        /// </summary>
+        public bool IsMonitor
+        {
+            get
+            {
+                return m_IsMonitor;
+            }
+
+            set
+            {
+                m_IsMonitor = value;
+            }
+        }
+
+        /// <summary>
         /// 当鼠标双击元素时触发此事件.
         /// </summary>
         public event HookHandler<DoubleClickElementEventArgs> DoubleClickElement;
@@ -49,7 +65,7 @@ namespace DotNet.Revit.Hook
         /// <summary>
         /// 注册元素监控，并指定是否立即监控.
         /// </summary>
-        public static void Register(UIApplication uiApp, bool immediatelyMonitor = true)
+        public static void Register(UIApplication uiApp)
         {
             if (uiApp == null)
             {
@@ -58,14 +74,14 @@ namespace DotNet.Revit.Hook
 
             new ElementMonitor(uiApp)
             {
-                m_IsMonitor = immediatelyMonitor
+                m_IsMonitor = true
             };
         }
 
         /// <summary>
         /// 注册元素监控，并指定是否立即监控.
         /// </summary>
-        public static void Register(UIControlledApplication uiControllApp, bool immediatelyMonitor = true)
+        public static void Register(UIControlledApplication uiControllApp)
         {
             if (uiControllApp == null)
             {
@@ -76,14 +92,20 @@ namespace DotNet.Revit.Hook
 
             var uiApp = (UIApplication)uiControllApp.GetType().InvokeMember("getUIApplication", flag, Type.DefaultBinder, uiControllApp, null);
 
-            Register(uiApp, immediatelyMonitor);
+            Register(uiApp);
         }
+
 
         /// <summary>
         /// 返回1，则拦截鼠标消息，返回0则传递给真正消息接收者.
         /// </summary>
         private int OnRaiseMouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
+            if (this.DoubleClickElement == null)
+            {
+                return 0;
+            }
+
             if (!m_IsMonitor || e.Button != MouseButtons.Left || e.Clicks != 2)
             {
                 return 0;
@@ -103,11 +125,6 @@ namespace DotNet.Revit.Hook
                 var elem = uiDoc.Document.GetElement(elemIds.First());
 
                 if (elem == null)
-                {
-                    return 0;
-                }
-
-                if (this.DoubleClickElement == null)
                 {
                     return 0;
                 }
