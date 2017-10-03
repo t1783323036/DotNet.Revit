@@ -49,14 +49,14 @@ namespace DotNet.Revit.Hook
         /// <summary>
         /// 注册元素监控，并指定是否立即监控.
         /// </summary>
-        public static ElementMonitor Register(UIApplication uiApp, bool immediatelyMonitor = true)
+        public static void Register(UIApplication uiApp, bool immediatelyMonitor = true)
         {
             if (uiApp == null)
             {
                 throw new ArgumentNullException(nameof(uiApp));
             }
 
-            return new ElementMonitor(uiApp)
+            new ElementMonitor(uiApp)
             {
                 m_IsMonitor = immediatelyMonitor
             };
@@ -65,7 +65,7 @@ namespace DotNet.Revit.Hook
         /// <summary>
         /// 注册元素监控，并指定是否立即监控.
         /// </summary>
-        public static ElementMonitor Register(UIControlledApplication uiControllApp, bool immediatelyMonitor = true)
+        public static void Register(UIControlledApplication uiControllApp, bool immediatelyMonitor = true)
         {
             if (uiControllApp == null)
             {
@@ -76,7 +76,7 @@ namespace DotNet.Revit.Hook
 
             var uiApp = (UIApplication)uiControllApp.GetType().InvokeMember("getUIApplication", flag, Type.DefaultBinder, uiControllApp, null);
 
-            return Register(uiApp, immediatelyMonitor);
+            Register(uiApp, immediatelyMonitor);
         }
 
         /// <summary>
