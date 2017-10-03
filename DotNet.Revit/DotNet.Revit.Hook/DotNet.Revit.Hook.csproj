@@ -55,6 +55,7 @@
     <Compile Include="CommandTest.cs" />
     <Compile Include="DataStructure\MOUSEHOOKSTRUCT.cs" />
     <Compile Include="DataStructure\POINT.cs" />
+    <Compile Include="DoubleClickElementEventArgs.cs" />
     <Compile Include="ElementMonitor.cs" />
     <Compile Include="Helper\HookHelper.cs" />
     <Compile Include="DataStructure\HookType.cs" />
