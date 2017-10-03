@@ -8,6 +8,10 @@ using Autodesk.Revit.Attributes;
 
 namespace DotNet.Revit.Hook
 {
+    /// <summary>
+    /// 鼠标双击元素拦截事件.
+    /// </summary>
+    /// <seealso cref="Autodesk.Revit.UI.IExternalCommand" />
     [Transaction(TransactionMode.Manual)]
     public class MouseHookTest : IExternalCommand
     {
