@@ -18,10 +18,8 @@ namespace DotNet.Revit
         public static List<Autodesk.Revit.DB.GeometryObject> GetGeometryObjects(this Element elem, Options options = default(Options))
         {
             var result = new List<Autodesk.Revit.DB.GeometryObject>();
-
-            options = options == default(Options) ? new Options() : options;
+            options = options ?? new Options();
             GeometryObjectHelper.RecursionObject(elem.get_Geometry(options), ref result);
-
             return result;
         }
 
@@ -30,34 +28,40 @@ namespace DotNet.Revit
         /// </summary>
         /// <param name="geometryElement">初始GeometryElement.</param>
         /// <param name="geometryObjects">递归结果.</param>
-        private static void RecursionObject(GeometryElement geometryElement, ref List<Autodesk.Revit.DB.GeometryObject> geometryObjects)
+        private static void RecursionObject(this GeometryElement geometryElement, ref List<Autodesk.Revit.DB.GeometryObject> geometryObjects)
         {
             if (geometryElement == null)
+            {
                 return;
+            }
 
             var eum = geometryElement.GetEnumerator();
+
             while (eum.MoveNext())
             {
                 var current = eum.Current;
-                var type = current.GetType();
 
-                if (type.Equals(typeof(GeometryInstance)))
+                switch (current)
                 {
-                    GeometryObjectHelper.RecursionObject((current as GeometryInstance).SymbolGeometry, ref geometryObjects);
-                }
-                else if (type.Equals(typeof(GeometryElement)))
-                {
-                    GeometryObjectHelper.RecursionObject(current as GeometryElement, ref geometryObjects);
-                }
-                else
-                {
-                    if (type.Equals(typeof(Solid)))
-                    {
-                        var solid = current as Solid;
+                    case GeometryInstance instance:
+                        instance.SymbolGeometry.RecursionObject(ref geometryObjects);
+                        break;
+
+                    case GeometryElement elemlemt:
+                        elemlemt.RecursionObject(ref geometryObjects);
+                        break;
+
+                    case Solid solid:
                         if (solid.Edges.Size == 0 || solid.Faces.Size == 0)
+                        {
                             continue;
-                    }
-                    geometryObjects.Add(current);
+                        }
+                        geometryObjects.Add(current);
+                        break;
+
+                    default:
+                        geometryObjects.Add(current);
+                        break;
                 }
             }
         }
