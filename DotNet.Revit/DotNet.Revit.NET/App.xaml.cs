@@ -15,7 +15,6 @@ namespace DotNet.Revit.NET
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-
             base.OnStartup(e);
         }
     }

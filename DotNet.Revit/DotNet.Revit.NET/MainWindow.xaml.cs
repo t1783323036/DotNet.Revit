@@ -33,7 +33,7 @@ namespace DotNet.Revit.NET
         {
             RevitFolder = MainWindow.GetRevitInstallationPath(RevitVersion.Revit2016);
 
-            MainWindow.AddEnvironmentPaths(new string[] { RevitFolder });
+            MainWindow.AddEnvironmentPaths(RevitFolder);
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
         }
 
