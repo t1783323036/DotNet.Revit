@@ -8,7 +8,7 @@ If you find the code error, please contact !
 
 ## Author
 
-Dedicated to BIM software API development. (Revit 、AutoCAD、Inventor、Navisworks)
+Dedicated to BIM software API development. (Revit 、AutoCAD、Inventor、Bentley)
 
 E-mail : admin@bimapi.com   
 QQ     : 154840459
