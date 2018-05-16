@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>824f3074-0794-4a6e-a2ad-36638408846c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>DotNet.RevitUI</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Extension\WindowExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\MainHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\RevitCommandHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\RibbonBindingHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\RibbonRegisterHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVM\IExecuteWithObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVM\IMessenger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVM\Messenger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVM\ObservableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVM\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVM\RelayCommandGeneric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVM\RevitRelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVM\WeakAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MVVM\WeakActionGeneric.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RevitApp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RevitCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RevitCommandInvoke.cs" />
+  </ItemGroup>
+</Project>
