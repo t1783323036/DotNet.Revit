@@ -21,7 +21,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Exchange.Revit", "Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Revit.Hook", "DotNet.Revit.Hook\DotNet.Revit.Hook.csproj", "{957A91DD-D04D-4811-82B7-7350A444CB12}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frames", "frames", "{EED62B00-70DF-4A90-9EB3-DD11B848BDE1}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DotNet.RevitUI", "DotNet.RevitUI\DotNet.RevitUI.shproj", "{824F3074-0794-4A6E-A2AD-36638408846C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.RevitUI (2016)", "DotNet.RevitUI (2016)\DotNet.RevitUI (2016).csproj", "{22F6CC59-E396-4477-9215-21777C68E044}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{1F01D2AB-DD0F-49E5-AE78-E157FDA5D42C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.DotNet.RevitUI (2016)", "Test.DotNet.RevitUI (2016)\Test.DotNet.RevitUI (2016).csproj", "{F4B2970D-431C-4801-A65D-F48FEE8C650A}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		DotNet.RevitUI\DotNet.RevitUI.projitems*{22f6cc59-e396-4477-9215-21777c68e044}*SharedItemsImports = 4
+		DotNet.RevitUI\DotNet.RevitUI.projitems*{824f3074-0794-4a6e-a2ad-36638408846c}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -63,9 +77,23 @@ Global
 		{957A91DD-D04D-4811-82B7-7350A444CB12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{957A91DD-D04D-4811-82B7-7350A444CB12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{957A91DD-D04D-4811-82B7-7350A444CB12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F6CC59-E396-4477-9215-21777C68E044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F6CC59-E396-4477-9215-21777C68E044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F6CC59-E396-4477-9215-21777C68E044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F6CC59-E396-4477-9215-21777C68E044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B2970D-431C-4801-A65D-F48FEE8C650A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B2970D-431C-4801-A65D-F48FEE8C650A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B2970D-431C-4801-A65D-F48FEE8C650A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B2970D-431C-4801-A65D-F48FEE8C650A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{824F3074-0794-4A6E-A2AD-36638408846C} = {EED62B00-70DF-4A90-9EB3-DD11B848BDE1}
+		{22F6CC59-E396-4477-9215-21777C68E044} = {EED62B00-70DF-4A90-9EB3-DD11B848BDE1}
+		{1F01D2AB-DD0F-49E5-AE78-E157FDA5D42C} = {EED62B00-70DF-4A90-9EB3-DD11B848BDE1}
+		{F4B2970D-431C-4801-A65D-F48FEE8C650A} = {1F01D2AB-DD0F-49E5-AE78-E157FDA5D42C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4212863E-A4CB-4F93-877C-346926AF014E}
