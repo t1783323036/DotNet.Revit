@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+   <AddIn Type="Application">
+      <Assembly>Test.DotNet.RevitUI.dll</Assembly>
+      <ClientId>A53E2E82-43F5-420A-882D-8603D495DF47</ClientId>
+      <FullClassName>Test.DotNet.RevitUI.AppRun</FullClassName>
+      <Name>Test.DotNet.RevitUI</Name>
+      <VendorId>dotnet bim</VendorId>
+      <VendorDescription></VendorDescription>	  
+   </AddIn>
+</RevitAddIns>
