@@ -61,7 +61,7 @@ namespace DotNet.RevitUI
             var p = parameter == null ? null : parameter as Autodesk.Windows.RibbonItem;
 
             if (p == null)
-                return true;
+                return CanExecute(p);
 
             p.Tag = RevitApp.Application;
 

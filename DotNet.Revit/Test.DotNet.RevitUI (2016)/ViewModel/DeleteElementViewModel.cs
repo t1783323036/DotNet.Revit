@@ -71,6 +71,8 @@ namespace Test.DotNet.RevitUI.ViewModel
                     }
                 });
 
+                Autodesk.Revit.UI.TaskDialog.Show("提示", "删除元素完成");
+
                 return Result.Succeeded;
             }
 

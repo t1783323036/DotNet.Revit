@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="0">
             <Label  Margin="20,0,0,0" VerticalContentAlignment="Center" Height="28" Width="60" Content="元素ID"  VerticalAlignment="Top"></Label>
-            <TextBox VerticalContentAlignment="Center" Padding="2,0,0,0" Text="{Binding ElementId}" Width="220" Height="28"></TextBox>
+            <TextBox VerticalContentAlignment="Center" Padding="2,0,0,0" Text="{Binding ElementId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="220" Height="28"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1">
             <Button Command="{Binding OK}" Content="确定" Width="85" Height="26"></Button>
