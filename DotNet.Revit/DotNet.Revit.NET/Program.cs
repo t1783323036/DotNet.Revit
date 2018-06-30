@@ -81,7 +81,7 @@ namespace DotNet.Revit.NET
                 }
             });
 
-            document.SaveAs(Path.Combine(WorkPath, string.Format("{0}.rvt", Guid.NewGuid())));
+            document.SaveAs(Path.Combine(WorkPath, "demowall.rvt"));
 
             RevitCoreContext.Instance.Stop();
         }
