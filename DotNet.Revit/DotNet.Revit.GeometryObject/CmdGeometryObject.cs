@@ -47,12 +47,14 @@ namespace DotNet.Revit.GeometryObject
     /// <seealso cref="Autodesk.Revit.UI.Selection.ISelectionFilter"/>
     public class SelectionFilterCommon : ISelectionFilter
     {
-        private Func<Element, bool> m_Func;
-        private Func<Reference, XYZ, bool> m_Func2;
+        private readonly Func<Element, bool> m_Func;
+
+        private readonly Func<Reference, XYZ, bool> m_Func2;
 
         public SelectionFilterCommon(Func<Element, bool> match, Func<Reference, XYZ, bool> func2)
         {
             m_Func = match;
+
             m_Func2 = func2;
         }
 

@@ -15,11 +15,15 @@ namespace DotNet.Revit
         /// <param name="elem">The elem.</param>
         /// <param name="options">The options.</param>
         /// <returns></returns>
+
         public static List<Autodesk.Revit.DB.GeometryObject> GetGeometryObjects(this Element elem, Options options = default(Options))
         {
             var result = new List<Autodesk.Revit.DB.GeometryObject>();
+
             options = options ?? new Options();
+
             GeometryObjectHelper.RecursionObject(elem.get_Geometry(options), ref result);
+
             return result;
         }
 
@@ -28,6 +32,7 @@ namespace DotNet.Revit
         /// </summary>
         /// <param name="geometryElement">初始GeometryElement.</param>
         /// <param name="geometryObjects">递归结果.</param>
+
         private static void RecursionObject(this GeometryElement geometryElement, ref List<Autodesk.Revit.DB.GeometryObject> geometryObjects)
         {
             if (geometryElement == null)
