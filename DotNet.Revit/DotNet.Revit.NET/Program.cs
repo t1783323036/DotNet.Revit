@@ -81,7 +81,7 @@ namespace DotNet.Revit.NET
                 }
             });
 
-            document.SaveAs(Path.Combine(WorkPath, "demowall.rvt"));
+            document.SaveAs(Path.Combine(WorkPath, "demowall.rvt"), new SaveAsOptions() { OverwriteExistingFile = true });
 
             RevitCoreContext.Instance.Stop();
         }
